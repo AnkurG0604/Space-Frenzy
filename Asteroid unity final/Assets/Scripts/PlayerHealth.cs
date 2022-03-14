@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] Text lives;
 
+    [SerializeField] ParticleSystem explosion;
+
     void Update()
     {
         lives.text = Lives.ToString();
@@ -25,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             Lives -= 1;
+            var ins = Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(ins.gameObject,1);
+            Destroy(other.gameObject);
         }
     }
 }
