@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        var deltaY = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
