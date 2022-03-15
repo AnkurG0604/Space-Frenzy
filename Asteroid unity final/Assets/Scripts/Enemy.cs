@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
             Destroy(Instance.gameObject,1);
             Destroy(other.gameObject);
             Destroy(gameObject);
+            Debug.Log("Collision");
         }
     }
 }

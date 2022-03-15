@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(Lives == 0)
         {
+            GameObject.FindGameObjectWithTag("Spawner").GetComponent<AsteroidSpawner>().isDead = true;
             Destroy(gameObject);
         }
     }
